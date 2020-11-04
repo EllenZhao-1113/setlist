@@ -9,25 +9,25 @@
     {
         "song" : "Call Me Lover",   
         "artist" : "Sam Fender",
-        "genre" : "Rock",
+        "genre" : ["Rock"],
         "released" : "2019"
     },
     {
         "song" : "Harry",   
         "artist" : "Kesly Karter",
-        "genre" : "Rock",
+        "genre" : ["Rock"],
         "released" : "2019"
     },
     {
         "song" : "Clean Me Up",   
         "artist" : "Thomas Headon",
-        "genre" : "Pop",
+        "genre" : ["Pop"],
         "released" : "2020"
     },
     {
         "song" : "Minimal",   
         "artist" : "Role Model",
-        "genre" : "Pop",
+        "genre" : ["Pop"],
         "released" : "2019"
     },
     {
@@ -45,19 +45,19 @@
     {
         "song" : "Cocoon",   
         "artist" : "Catfish and the Bottlemen",
-        "genre" : "Alternative",
+        "genre" : ["Alternative"],
         "released" : "2014"
     },
     {
         "song" : "Impossible",   
         "artist" : "Nothing But Theives",
-        "genre" : "Rock",
+        "genre" : ["Rock"],
         "released" : "2020"
     },
     {
         "song" : "Romeo & Juliet",   
         "artist" : "Hobo Johnson",
-        "genre" : "Rap",
+        "genre" : ["Rap"],
         "released" : "2017"
     }
   ]
