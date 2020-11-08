@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Setlist </title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script>
+            function friendlyPrint(data) {
+                var message = "";
+                var lengthJSON = Object.keys(data.setlist).length;
+                var i;
+                for (i = 0; i < lengthJSON; i++) {
+                    message = message + "<h3>" + data.setlist[i].song + "</h3>";
+                    message = message + "<p> artist: " + data.setlist[i].artist + "<br> genre: " + 
+                    data.setlist[i].genre + "<br> released: " + data.setlist[i].released + "<br>";
+                }
+                return message;
+            }
+            function filter() {
+                var selected = document.forms["genreList"]["mySelect"].value;
+                var lengthJSON = Object.keys(data.setlist).length;
+                var i;
+                var genreArr = "";
+                var songNames = "<h1>" + selected + " songs: </h1> <p>";
+                for (i = 0; i < lengthJSON; i++) {
+                    var j;
+                    var genreVal = data.setlist[i].genre;
+                    var genreLen = genreVal.length;
+                    for (j = 0; j < genreLen; j++) {
+                        if (genreVal[j] == selected) {
+                            songNames = songNames + data.setlist[i].song + "<br>"
+                        }
+                    }
+                }
+                songNames = songNames + "</p>";
+                document.getElementById("pt3").innerHTML = songNames;
+                event.preventDefault();
+            } 
+            function loadJSON() {
+                /* Step 1: Make instance of XHR object...
+                ...to make HTTP request after page is loaded*/
+                request = new XMLHttpRequest();
+                console.log("1: created request");
+     
+            // Step 2: Open the JSON file at remote location
+     
+                request.open("GET", "https://ellenzhao-1113.github.io/setlist/setlist.json", true);
+    
+                console.log("2: open success");
+         
+                // Step 3: set up callback for when HTTP response is returned (i.e., you get the JSON file back)
+    
+                request.onreadystatechange = function() {
+                    console.log("3:  event fired");
+                
+     
+                    if (request.readyState == 4 && request.status == 200) {
+    
+                        // Step 5: when we get all the JSON data back, parse it and use it
+                        console.log("5:  data is ready");
+                        theData = request.responseText;
+                        returnHTML = theData;
+                        data = JSON.parse(theData);
+                        stringData = JSON.stringify(data);
+    
+                        document.getElementById("pt1").innerHTML = stringData;
+                        var string2 = friendlyPrint(data);
+                        document.getElementById("pt2").innerHTML = string2; 
+                        
+                
+                    }
+                    else if (request.readyState == 4 && request.status != 200) {
+    
+                        document.getElementById("pt1").innerHTML = "Whoops, something went terribly wrong!";
+    
+                    }
+    
+                    else if (request.readyState == 3) {
+    
+                        console.log("6:  ready state 3- request received,data being sent");
+                        document.getElementById("pt1").innerHTML = "Come back soon!";
+    
+                    }
+    
+                }//end on readystate change
+        
+            // Step 4: fire off the HTTP request
+                request.send();
+                console.log("4 request sent");
+            }
+        </script>
+    </head>
+    <body onload="loadJSON()">
+         <h1>Set List</h1>
+         <h2>Part 1: </h2>
+         <div id="pt1">&nbsp;</div>
+         <h2>Part 2: </h2>
+        <div id="pt2">&nbsp;</div>
+        <h1>Genre Filtering</h1>
+        <form id=genreList>
+            <select id="mySelect" size="4">
+                <option>RnB</option>
+                <option>Soul</option>
+                <option>Rock</option>
+                <option>Pop</option>
+                <option>Alternative</option>
+                <option>Rap</option>
+              </select> 
+              <br>
+              <button id="filtered" onclick="filter(event)">Filter</button>
+        </form> 
+        <div id="pt3">&nbsp;</div>
+    </body>
+</html>
