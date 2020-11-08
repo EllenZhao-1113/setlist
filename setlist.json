@@ -1,0 +1,64 @@
+{
+  "setlist" : [
+    {
+        "song" : "Scottie Pippen",   
+        "artist" : "Bren Joy",
+        "genre" : ["RnB", "Soul"],
+        "released" : "2019"
+    },
+    {
+        "song" : "Call Me Lover",   
+        "artist" : "Sam Fender",
+        "genre" : ["Rock"],
+        "released" : "2019"
+    },
+    {
+        "song" : "Harry",   
+        "artist" : "Kesly Karter",
+        "genre" : ["Rock"],
+        "released" : "2019"
+    },
+    {
+        "song" : "Clean Me Up",   
+        "artist" : "Thomas Headon",
+        "genre" : ["Pop"],
+        "released" : "2020"
+    },
+    {
+        "song" : "Minimal",   
+        "artist" : "Role Model",
+        "genre" : ["Pop"],
+        "released" : "2019"
+    },
+    {
+        "song" : "Heat Waves",   
+        "artist" : "Glass Animals",
+        "genre" : ["Alternative", "Pop"],
+        "released" : "2020"
+    },
+    {
+        "song" : "Can I Call You Tonight",   
+        "artist" : "Dayglow",
+        "genre" : ["Alternative", "Pop"],
+        "released" : "2018"
+    },
+    {
+        "song" : "Cocoon",   
+        "artist" : "Catfish and the Bottlemen",
+        "genre" : ["Alternative"],
+        "released" : "2014"
+    },
+    {
+        "song" : "Impossible",   
+        "artist" : "Nothing But Theives",
+        "genre" : ["Rock"],
+        "released" : "2020"
+    },
+    {
+        "song" : "Romeo & Juliet",   
+        "artist" : "Hobo Johnson",
+        "genre" : ["Rap"],
+        "released" : "2017"
+    }
+  ]
+}
